@@ -1,0 +1,18 @@
+<%= form_for @wiki do |f| %>
+<h1>Ready to drop some knowledge?</h1>
+  <div class="field block">
+    <%= f.text_field :title, autofocus: true, placeholder: "Enter a title [required]" %>
+  </div>
+  <div class="field block">
+    <%= f.text_area :body, autofocus: true, rows: 8, placeholder: "Enter some text... [required]" %>
+  </div>
+  <% if current_user.role == 'admin' || current_user.role == 'premium' %>
+    <div class="checkbox">
+      <%= f.check_box :private %>
+      <%= f.label "Is this Wiki private?" %>
+    </div>
+  <% end %>
+  <div class="actions">
+    <%= f.submit "Save it!", class: "btn block free" %>
+  </div>
+<% end %>

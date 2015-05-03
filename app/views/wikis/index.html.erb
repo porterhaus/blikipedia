@@ -1,0 +1,19 @@
+<% if current_user.present? %>
+  Hey, <%= current_user.name %> |
+  <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %> |
+<% else %>
+  <%= link_to "Sign In", new_user_session_path %> |
+  <%= link_to "Sign Up", new_user_session_path %> |
+<% end %>
+<%= link_to "Home", root_path %>
+
+<h1>Wikis#index</h1>
+<%= link_to "[New]", new_wiki_path %>
+<% @wikis.each do | wiki | %>
+  <div class="wiki wiki-item">
+    <h2 class="title"><%= wiki.title %></h2>
+    <span class="owner">by <%= wiki.user.name %></span>
+    <span>[<%= link_to "Show", wiki_path(wiki)%>]</span>
+    <span>[<%= link_to "Edit", edit_wiki_path(wiki)%>]</span>
+  </div>
+<% end %>
