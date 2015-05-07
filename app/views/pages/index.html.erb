@@ -1,11 +1,21 @@
-<% if current_user.present? %>
-  Hey, <%= current_user.name %> |
-  <%= link_to "Sign Out", destroy_user_session_path, :method => :delete %> |
-<% else %>
-  <%= link_to "Sign In", new_user_session_path %> |
-  <%= link_to "Sign Up", new_user_session_path %> |
-<% end %>
-<%= link_to "Wikis", wikis_path %>
 
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<div class="hero row">
+  <div class="container">
+    <h1>Knowledge by the people, for the people.</h1>
+    <div class="call-to-action">
+      <%= link_to "Get Started", new_user_registration_path, :class=>'btn hero' %>
+    </div>
+  </div>
+</div>
+<div class="devices row">
+  <div class="container">
+   <%= image_tag("devices.png", :class=>"device-image") %>
+  </div>
+</div>
+<div class="learn row">
+  <%= link_to new_user_registration_path do %>
+    <h1 class="free">Be Free!</h1>
+    <h3><span class="bold free">FREE!</span> <span class="kern-minus-3">Unlimited Public Blikis</span></h3>
+    <h3><span class="bold free">FREE!</span> <span class="kern-minus-3">Contribute to Public Blikis</span></h3>
+  <% end %>
+</div>

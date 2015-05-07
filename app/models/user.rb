@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :collaborators
+  has_many :wikis, :through => :collaborators
 
   validates_presence_of :name
 

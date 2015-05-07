@@ -26,6 +26,8 @@ gem 'faker'
 gem 'pundit'
 gem 'stripe'
 gem 'figaro', '1.0'
+gem 'redcarpet'
+gem 'simple_form'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0', group: :doc

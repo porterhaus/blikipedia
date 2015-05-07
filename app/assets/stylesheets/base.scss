@@ -1,7 +1,212 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300);
 
 $font-stack: "Open Sans", serif;
+$regular: "AvenirNext-Regular", serif;
+$demi-bold: "AvenirNext-DemiBold", serif;
+$ultra-light: "AvenirNext-UltraLight", serif;
+$heavy: "AvenirNext-Heavy", serif;
+$sign-up-blue: #19B5FE;
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 
 body {
   font-family: $font-stack;
+  color: #333;
+}
+
+.row:before,
+.row:after,
+{
+  content:"";
+  display: table ;
+  clear:both;
+}
+
+.container {
+  max-width: 996px;
+  margin: 0 auto;
+}
+
+.nav {
+  padding: 2rem;
+  ul {
+    display: inline-block;
+    float: right;
+    padding: 1rem;
+  }
+  li {
+    display: inline-table;
+    list-style: none;
+    padding-left: 1.2rem;
+    text-align: center;
+  }
+  a {
+    color: $sign-up-blue;
+    font-family: $demi-bold;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-decoration: none;
+  }
+  a.highlight {
+    color: #FFFFFF;
+    background-color: $sign-up-blue;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    padding: .5rem 1rem;
+  }
+}
+
+.hero {
+  text-align: center;
+  padding: 1rem 1rem; 
+  margin-bottom: 4rem;
+  h1 {
+    font-family: $regular;
+    font-weight: bold;
+    font-size: 6.4rem;
+    letter-spacing: -3.4px;
+    line-height: 1.15;
+    color: #111;
+    padding-top: 1rem;
+  }
+  .call-to-action {
+    text-align: center;
+    padding: 3.4rem 0 1rem;
+  }
+}
+
+.devices {
+  margin: 3rem 0 6rem;
+  background-color: #FFF;
+  text-align: center;
+  padding: 1rem 1rem 0;
+  .device-image {
+    max-width: 100%;
+  }
+}
+
+.learn {
+  background: #ECF0F1;
+  min-height: 480px;
+  padding: 6rem 0;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+  h1 {
+    font-family: $heavy;
+    font-size: 12rem;
+    text-transform: uppercase;
+  }
+  h2 {
+    font-family: $heavy;
+    font-size: 6.2rem;
+    text-transform: uppercase;
+  }
+  h3 {
+    font-family: $regular;
+    font-size: 5rem;
+    letter-spacing: -1px;
+  }
+  h5 {
+    font-family: $font-stack;
+    font-size: 2rem;
+    padding-top: 2rem;
+  }
+  .bold {
+    font-family: $heavy;
+  }
+  .free {
+    color: $sign-up-blue;
+  }
+  .kern-minus-2 {
+    letter-spacing: -2px;
+  }
+  .kern-minus-3 {
+    letter-spacing: -3px;
+  }
+  .upgrade {
+    text-decoration: underline;
+  }
+}
+
+.footer {
+  color: #8D97AC;
+  font-family: $font-stack;
+  padding: 3rem 3rem;
+  text-align: center;
+
+  ul {
+    padding-top: 3rem;
+    font-size: 1.4rem;
+  }
+  li {
+    letter-spacing: -1px;
+    font-weight: bold;
+    display: inline-table;
+    padding: 0 1rem;
+  }
+  li:hover {
+    cursor: pointer;
+  }
+  .devops {
+    padding-top: 4rem;
+    small {
+      color: #333;
+      font-family: $heavy;
+      text-transform: uppercase;
+      padding-right: 8px;
+    }
+    img {
+      vertical-align: middle;
+    }
+  }
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: -0.05rem;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+
+  &.hero {
+    font-size: 2rem;
+    font-family: $regular;
+    color: #FFFFFF;
+    background: #9B57B4;
+    box-shadow: inset 0px -8px 0px 0px rgba(52,24,65,0.50);
+    padding: 2rem 5rem;
+    width: 24rem;
+    margin: 0 auto;
+  }
+}
+
+input[type='text'], 
+input[type='email'], 
+input[type='password'],
+textarea { 
+  padding: 4px 10px;
+  font-size: 2rem;
+  box-sizing: border-box;
+  width: 100%;
+  
+  border-top: 3px solid #7c7c7c;
+  border-right: 1px solid #c3c3c3;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #c3c3c3;
+  background-color: #fff;
+}
+.form {
+
+
 }
