@@ -1,13 +1,20 @@
 <div class="container row">
-  <div class="wiki wiki-read-item">
-    <%= link_to "[Back]", wikis_path %>
+  <div class="wiki">
+    <header class="heading">
+      <%= link_to "Back", wikis_path %>
+      <div class="status">
+        <% if @wiki.private == true %>
+          <span>This bliki is private.</span>
+        <% else %>
+          <span>This bliki is public.</span>
+        <% end %>
+      </div>
+    </header>
 
-    <h1> <%= markdown_to_html @wiki.title %></h1>
+    <h1 class="title"><%= @wiki.title %></h1>
 
-    <h4> <%= @wiki.user.name %></h4>
-
-    <div class= "wiki body">
+    <article class= "markdown-body">
       <%= markdown_to_html @wiki.body %>
-    </div>
+    </article>
   </div>
 </div>

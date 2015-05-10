@@ -397,6 +397,7 @@ textarea {
       font-family: $heavy;
       font-size: 2rem;
       letter-spacing: -0.075rem;
+      text-align: left;
       padding: 2rem;
       color: #333;
     }
@@ -441,9 +442,68 @@ textarea {
     }
   }
 
-  &.wiki-read-item {
+  /*&.wiki-read-item {
 
     text-align: center;
+    font-family: $font-stack;
+    font-size: 1.2rem;
 
+    p {
+      text-align: left;
+      line-height: 2rem;
+      padding-bottom: 1.4rem;
+    }
+
+    .title {
+      text-align: center;
+      font-family: $heavy;
+      font-size: 4rem;
+      padding: 4rem 0;
+    }
+
+    .author {
+      text-align: center;
+      padding-bottom: 3rem;
+
+      .author-name {
+        font-weight: bold;
+      }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      text-align: left;
+      padding-bottom: 1.4rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+  }*/
+
+  .title {
+    font-family: $heavy;
+    font-size: 4rem;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .heading {
+    font-family: $regular;
+    background: #f3f3f3;
+    box-sizing: border-box;
+    color: #6f6f6f;
+    padding: 1rem 2rem;
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .status {
+      float: right;
+    }
   }
 }
