@@ -1,37 +1,38 @@
 
-<h2>Sign up</h2>
-<div class="container cloud">
-  <div class="row">
+<h2 class="page-header">
+  <div class="container">Sign up</div>
+</h2>
+<div class="container">
+  <div class="form row">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
 
       <div class="field">
-        <%= f.label :name %><br />
-        <%= f.text_field :name, autofocus: true, placeholder: "Username" %>
+        <%= f.label :name %>
+        <%= f.text_field :name, autofocus: true, placeholder: "Name" %>
       </div>
 
       <div class="field">
-        <%= f.label :email %><br />
-        <%= f.email_field :email, autofocus: true %>
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, placeholder: "Email" %>
       </div>
 
       <div class="field">
         <%= f.label :password %>
+        <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
         <% if @validatable %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <em> (<%= @minimum_password_length %> characters minimum)</em>
+        <% end %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm password" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up" %>
+        <%= f.submit "Create your account", :class=>"btn default block" %>
       </div>
     <% end %>
-    <%= render "devise/shared/links" %>
   </div>
 </div>

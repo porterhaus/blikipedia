@@ -1,6 +1,13 @@
-<%= link_to "[Back]", wikis_path %>
-<h1> <%= markdown_to_html @wiki.title %></h1>
-<h4> <%= @wiki.user.name %></h4>
-<div class= "wiki body">
-  <%= markdown_to_html @wiki.body %>
+<div class="container row">
+  <div class="wiki wiki-read-item">
+    <%= link_to "[Back]", wikis_path %>
+
+    <h1> <%= markdown_to_html @wiki.title %></h1>
+
+    <h4> <%= @wiki.user.name %></h4>
+
+    <div class= "wiki body">
+      <%= markdown_to_html @wiki.body %>
+    </div>
+  </div>
 </div>

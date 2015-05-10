@@ -1,12 +1,30 @@
 
-<h1>Wikis#index</h1>
-<%= link_to "[New]", new_wiki_path %>
-<% @wikis.each do | wiki | %>
-  <div class="wiki wiki-item">
-    <h2 class="title"><%= wiki.title %></h2>
-    <span class="owner">by <%= wiki.user.name %></span>
-    <span>[<%= link_to "Show", wiki_path(wiki)%>]</span>
-    <span>[<%= link_to "Edit", edit_wiki_path(wiki)%>]</span>
-    <h5><%= wiki.private %>
+<h2 class="page-header">
+  <div class="container">Blikis
+    <% if current_user %>
+      <%= link_to "New", new_wiki_path, class: 'btn green normal right' %>
+    <% end %>
   </div>
-<% end %>
+</h2>
+<div class="container">
+  <% @wikis.each do | wiki | %>
+    <%= link_to wiki_path(wiki)  do %>
+      <div class="wiki wiki-item row">
+        <h2 class="title"><%= wiki.title %></h2>
+        <div class="footer">
+          <div class="author">
+            <div class="owner">by <a href="users/not_a_real_path" class="name"><%= wiki.user.name %></a></div>
+          </div>
+          <div class="stats">
+            <span class="reads">
+              <%= rand(10) %>K reads
+            </span>
+            <span class="collabo">
+
+            </span>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

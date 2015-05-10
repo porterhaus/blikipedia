@@ -162,7 +162,7 @@ body {
       color: #333;
       font-family: $heavy;
       text-transform: uppercase;
-      padding-right: 8px;
+      padding-right: 4px;
     }
     img {
       vertical-align: middle;
@@ -171,6 +171,7 @@ body {
 }
 
 .btn {
+  cursor: pointer;
   display: block;
   text-align: center;
   text-decoration: none;
@@ -189,6 +190,59 @@ body {
     width: 24rem;
     margin: 0 auto;
   }
+
+  &.default {
+    font-size: 1.44rem;
+    font-family: $regular;
+    font-weight: normal;
+    color: #FFFFFF;
+    background: #14A6DB;
+    box-shadow: inset 0px -4px 0px 0px #237BBA;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+  &.default:hover {
+    background: #237BBA;
+  }
+
+  &.orange {
+    font-size: 1.44rem;
+    font-family: $regular;
+    font-weight: normal;
+    color: #FFFFFF;
+    background: #E75230;
+    box-shadow: inset 0px -4px 0px 0px #86301B;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+  &.orange:hover {
+    background: #86301B;
+  }
+
+  &.green {
+    font-size: 1.44rem;
+    font-family: $regular;
+    font-weight: normal;
+    color: #FFFFFF;
+    background: #328B2D;
+    box-shadow: inset 0px -4px 0px 0px #394F1E;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+  &.green:hover {
+    background-color: #394F1E;
+  }
+
+  &.normal {
+    width: 10%;
+    display: inline-block;
+  }
+  &.block {
+    width: 100%;
+  }
+  &.right {
+    float: right;
+  }
 }
 
 input[type='text'], 
@@ -196,9 +250,13 @@ input[type='email'],
 input[type='password'],
 textarea { 
   padding: 4px 10px;
-  font-size: 2rem;
   box-sizing: border-box;
   width: 100%;
+
+  font-family: $font-stack;
+  font-size: 2rem;
+  letter-spacing: -1px;
+  line-height: 1.6;
   
   border-top: 3px solid #7c7c7c;
   border-right: 1px solid #c3c3c3;
@@ -206,7 +264,186 @@ textarea {
   border-left: 1px solid #c3c3c3;
   background-color: #fff;
 }
+.page-header {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 2rem;
+  background-color: #f3f3f3;
+
+  font-size: 3rem;
+  letter-spacing: -0.03rem;
+  font-family: $regular;
+  font-weight: normal !important;
+  font-style: normal !important;
+
+  .container {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5px;
+    padding-right: 10px;
+    min-height: 51px;
+  }
+}
 .form {
+  letter-spacing: -1px;
+  padding: 1rem 1rem 0;
 
+  .field {
+    margin-top: 16px;
+    margin-bottom: 16px;
 
+    em {
+      display: inline-block;
+      padding-top: 0.4rem;
+      padding-left: 0.3rem;
+      font-family: $regular;
+    }
+  }
+
+  .checkbox {
+    label {
+      padding-top: 0.6rem;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    input[type="checkbox"]{
+      width: 28px;
+      height: 28px;
+      position: relative;
+      vertical-align: middle;
+    }
+  }
+
+  label, .field_with_errors {
+    font-family: $demi-bold;
+    font-size: 1.4rem;
+    display: block;
+    padding-bottom: 0.5rem;
+    padding-left: 0.2rem;
+  }
+
+  .actions {
+    margin-top: 2rem;
+  }
+
+  .field_with_errors {
+    color: #86301B;
+    padding: 0;
+  }
+
+  .alert-error-block {
+    color: #86301B;
+
+    ul {
+      font-family: $font-stack;
+      padding: 1rem;
+      font-size: 1.44rem;
+
+      li {
+        padding-top: 0.5rem;
+      }
+    }
+
+    .header {
+      font-family: $heavy;
+      font-size: 2rem;
+    }
+  }
+}
+
+.alert {
+  font-family: $font-stack;
+  font-weight: bold;
+  padding: 1rem;
+
+  a {
+    text-decoration: none;
+  }
+
+  .close {
+    float: right;
+  }
+
+  &.alert-alert {
+    color: #86301B;
+    border-top: 5px solid #86301B;
+    border-bottom: 5px solid #86301B;
+    border-left: 10px solid #86301B;
+    background-color: #F1BCAF;    
+  }
+
+  &.alert-notice {
+    color: #FFFFFF;
+    border-top: 5px solid #237BBA;
+    border-bottom: 5px solid #237BBA;
+    border-left: 10px solid #237BBA;
+    background-color: #14A6DB;
+  }
+}
+.wiki {
+
+  display: block;
+  clear: both;
+
+  &.wiki-item {
+    margin-bottom: 1rem;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 3px solid #DFDFDF;
+
+    .title {
+      font-family: $heavy;
+      font-size: 2rem;
+      letter-spacing: -0.075rem;
+      padding: 2rem;
+      color: #333;
+    }
+
+    .footer {
+      padding: 1rem 1rem 2rem;
+      border-top: 3px solid #DFDFDF;
+      
+      .author, .stats {
+        display: inline-block;
+      }
+
+      .author {
+        float: left;
+
+        .owner {
+
+          a {
+            color: #777;
+            font-family: $regular;
+            font-weight: lighter;
+          }
+
+          .name {
+            text-decoration: none;
+            color: #33CCFF;
+            font-family: $demi-bold;
+          }
+        }
+      }
+
+      .stats {
+        float: right;
+      }
+
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+  }
+
+  &.wiki-read-item {
+
+    text-align: center;
+
+  }
 }
