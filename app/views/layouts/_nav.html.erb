@@ -9,7 +9,7 @@
     <% if current_user.present? %>
       <li>
         <%= link_to do %>
-          Hey, You!
+          Hey, <%= current_user.name %>
         <% end %>
       </li>
       <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>

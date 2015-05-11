@@ -15,7 +15,12 @@ class User < ActiveRecord::Base
     self.role = 'standard'
   end
 
-  def collaborator?
-    
+  def collaborator?(user, wiki)
+    if Collaborator.where(user_id: user, wiki_id: wiki)
+      true
+    else
+      false
+    end
   end
+
 end

@@ -7,9 +7,4 @@ class Wiki < ActiveRecord::Base
   validates :body, presence: true
 
   scope :visible_to, -> (user) { user ? all : where(private: false) }
-
-  def collaborator?
-    Collaborator.where(user_id: user.id, group_id: group.id)
-  end
-
 end

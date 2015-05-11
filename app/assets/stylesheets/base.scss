@@ -233,6 +233,20 @@ body {
     background-color: #394F1E;
   }
 
+  &.blue {
+    font-size: 1.44rem;
+    font-family: $regular;
+    font-weight: normal;
+    color: #FFFFFF;
+    background: #237BBA;
+    box-shadow: inset 0px -4px 0px 0px #0A5168;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+  &.blue:hover {
+    background-color: #0A5168;
+  }
+
   &.normal {
     width: 10%;
     display: inline-block;
@@ -471,6 +485,28 @@ textarea {
 }
 
 .collaborators {
-  padding: 1rem;
+  border-top: 1px solid #c1c1c1;
+  margin-top: 3rem;
+  padding: 1rem 0;
   font-family: $font-stack;
+
+  h1 {
+    font-size: 1.44rem;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+  }
+
+  .user-details {
+    padding: 0.5rem 0;
+  }
+
+  .highlight {
+    color: #394F1E;
+    font-weight: bolder;
+    font-size: 1.4rem;
+  }
+}
+
+.actions {
+  margin-top: 3rem;
 }

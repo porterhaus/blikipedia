@@ -3,20 +3,16 @@
     <header class="heading">
       <%= link_to "Back", wikis_path %>
       <div class="status">
-
         <% if @wiki.user_id == current_user.id %>
           <span>This bliki is yours.</span>
         <% else %>
           <span>This bliki was created by <%= @creator.name %>. </span>
         <% end %>
-
-
         <% if @wiki.private == true %>
           <span>This bliki is private.</span>
         <% else %>
           <span>This bliki is public.</span>
         <% end %>
-
       </div>
     </header>
 
@@ -26,10 +22,24 @@
       <%= markdown_to_html @wiki.body %>
     </article>
   </div>
-  <div class="collaborators">
-    <h1>Collaborators</h1>
-    <% @collaborators.each do |user| %>
-      <div><%= user.name %></div>
-    <% end %>
-  </div>
+
+  <% if @wiki.private == true %>
+    <div class="collaborators">
+      <h1>Collaborators</h1>
+      <% @wiki.users.each do |user| %>
+        <% if user.id == current_user.id %>
+          <div class="user-details highlight"><%= user.name %> <span><=== You are a contributor.</span></div>
+        <% else %>
+          <div class="user-details"><%= user.name %></div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <% if current_user.collaborator?(current_user.id, @wiki.id) || current_user.id == @wiki.user_id %>
+    <div class="actions">
+      <%= link_to "Edit this Bliki", edit_wiki_path(@wiki), class: 'btn blue' %>
+    </div>
+  <% end %>
+
 </div>
