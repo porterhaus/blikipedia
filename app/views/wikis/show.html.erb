@@ -3,11 +3,20 @@
     <header class="heading">
       <%= link_to "Back", wikis_path %>
       <div class="status">
+
+        <% if @wiki.user_id == current_user.id %>
+          <span>This bliki is yours.</span>
+        <% else %>
+          <span>This bliki was created by <%= @creator.name %>. </span>
+        <% end %>
+
+
         <% if @wiki.private == true %>
           <span>This bliki is private.</span>
         <% else %>
           <span>This bliki is public.</span>
         <% end %>
+
       </div>
     </header>
 
@@ -16,5 +25,11 @@
     <article class= "markdown-body">
       <%= markdown_to_html @wiki.body %>
     </article>
+  </div>
+  <div class="collaborators">
+    <h1>Collaborators</h1>
+    <% @collaborators.each do |user| %>
+      <div><%= user.name %></div>
+    <% end %>
   </div>
 </div>

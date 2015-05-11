@@ -442,45 +442,6 @@ textarea {
     }
   }
 
-  /*&.wiki-read-item {
-
-    text-align: center;
-    font-family: $font-stack;
-    font-size: 1.2rem;
-
-    p {
-      text-align: left;
-      line-height: 2rem;
-      padding-bottom: 1.4rem;
-    }
-
-    .title {
-      text-align: center;
-      font-family: $heavy;
-      font-size: 4rem;
-      padding: 4rem 0;
-    }
-
-    .author {
-      text-align: center;
-      padding-bottom: 3rem;
-
-      .author-name {
-        font-weight: bold;
-      }
-    }
-
-    h1, h2, h3, h4, h5, h6 {
-      text-align: left;
-      padding-bottom: 1.4rem;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-    }
-
-  }*/
-
   .title {
     font-family: $heavy;
     font-size: 4rem;
@@ -504,6 +465,12 @@ textarea {
 
     .status {
       float: right;
+      font-size: 1.2rem;
     }
   }
+}
+
+.collaborators {
+  padding: 1rem;
+  font-family: $font-stack;
 }
