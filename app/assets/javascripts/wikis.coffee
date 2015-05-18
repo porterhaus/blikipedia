@@ -1,3 +1,14 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$ -> 
+  
+  $('.help').hide()
+  
+  $('.help-toggle').click ->
+      $('.help').toggle( ->
+        if $('.help-toggle').text() is 'Need some markdown help? Click here.'
+          $('.help-toggle').text("I'm good. Click to close.")
+        else
+          $('.help-toggle').text('Need some markdown help? Click here.')
+      )
+        
+      
+      

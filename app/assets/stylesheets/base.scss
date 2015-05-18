@@ -299,6 +299,7 @@ textarea {
     min-height: 51px;
   }
 }
+
 .form {
   letter-spacing: -1px;
   padding: 1rem 1rem 0;
@@ -364,6 +365,7 @@ textarea {
       font-size: 2rem;
     }
   }
+
 }
 
 .alert {
@@ -505,6 +507,70 @@ textarea {
     font-weight: bolder;
     font-size: 1.4rem;
   }
+}
+
+.bliki {
+  h1 {
+    font-family: $heavy;
+    font-size: 3rem;
+    letter-spacing: -1px;
+    text-align: center;
+
+  }
+  #new_wiki, [id*='edit_wiki_']{
+    margin: 0 auto;
+    max-width: 64%;
+    .field {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.help {
+  margin: 0 auto 2rem;
+  max-width: 64%;
+  padding: 1rem;
+  border: 1px solid #c4c4c4;
+  background-color: #F7F7F7;
+  font-family: $regular;
+  font-size: 1rem;
+
+  h1 {
+    font-family: $regular;
+    font-size: 2rem;
+    padding-top: 2rem;
+  }
+
+  p {
+    line-height: 1.4;
+  }
+
+  .headers, .emphasis, .links, .code, .blockquote {
+    padding: 1rem 0;
+    h4 {
+      font-weight: bold;
+      padding-bottom: 0.75rem;
+    }
+  }
+}
+
+.help-toggle {
+   cursor: pointer;
+
+   display: block;
+   margin: 0 auto;
+   padding: 1rem 10rem;
+   margin-bottom: 2rem;
+
+   font-size: 1.4rem;
+   font-family: $regular;
+   color: #d008db;
+
+   background-color: #FFF;
+   border: none;
+}
+.help-toggle:focus {
+  outline: 0;
 }
 
 .actions {

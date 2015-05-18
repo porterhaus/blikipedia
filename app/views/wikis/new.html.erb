@@ -1,4 +1,7 @@
-<%= link_to "[Back]", wikis_path %>
-<h2 class="">Create a New Wiki</h2>
-<%= render partial: 'form', locals: { topic: @wiki } %>
+<div class="bliki">
+  <h1>Ready to drop some knowledge?</h1>
+  <button class="help-toggle">Need some markdown help? Click here.</button>
+  <%= render partial: 'help' %>
+  <%= render partial: 'form', locals: { topic: @wiki } %>
+</div>
 
