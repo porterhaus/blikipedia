@@ -1,6 +1,4 @@
-$ -> 
-  
-  $('.help').hide()
+$(document).on 'page:load', ->
   
   $('.help-toggle').click ->
       $('.help').toggle( ->
@@ -9,6 +7,4 @@ $ ->
         else
           $('.help-toggle').text('Need some markdown help? Click here.')
       )
-        
-      
-      
+
