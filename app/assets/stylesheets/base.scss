@@ -298,6 +298,12 @@ textarea {
     padding-right: 10px;
     min-height: 51px;
   }
+
+  form {
+    float: right;
+    vertical-align: middle;
+    line-height: .7;
+  }
 }
 
 .form {
@@ -575,4 +581,52 @@ textarea {
 
 .actions {
   margin-top: 3rem;
+}
+
+#prem-plan {
+  text-align: center;
+  font-family: $regular;
+  font-size: 2rem;
+
+  .title {
+    font-family: $heavy;
+    font-size: 3rem;
+  }
+
+  li {
+    padding: 1rem;
+  }
+}
+
+.checkbox {
+font-family: $regular;
+font-size: 1.6rem;
+  label {
+    padding-top: 0.1rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  input[type="checkbox"]{
+    width: 28px;
+    height: 28px;
+    position: relative;
+    vertical-align: middle;
+  }
+}
+
+.collabos {
+  font-family: $regular;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+.wiki_users {
+  label {
+    display: inline-table;
+  }
+  select {
+    font-family: $regular;
+    font-size: 1.4rem;
+  }
 }

@@ -1,0 +1,22 @@
+<h2 class="page-header">
+  <div class="container">Upgrade to Premium
+    <% if current_user %>
+      <%= form_tag charges_path do %>
+        <script class='stripe-button' src="https://checkout.stripe.com/checkout.js" data-key="<%= @stripe_btn_data[:key] %>" data-amount=<%= @stripe_btn_data[:amount] %> data-description="<%= @stripe_btn_data[:description] %>" ></script>
+      <% end %>
+    <% end %>
+  </div>
+</h2>
+<div class="container">
+  <div id="prem-plan">
+    <ul>
+      <li><h1 class="title">This is what you get!</h1></li>
+      <li>Cost = <span class="strong">$2</span> a month</li>
+      <li>Unlimited <span class="strong">PUBLIC</span> Wikis</li>
+      <li>Unlimited <span class="strong">PRIVATE</span> Wikis</li>
+      <li>Unlimited <span class="strong">High</span> Fives</li>
+      <li>1-year <span class="strong">FREE</span> Pancakes</li>
+      <li>And... <span class="strong"> a heck yeah!</span></li>
+    </ul>
+  </div>
+</div>
