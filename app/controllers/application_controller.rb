@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user_not_authorized
-    flash[:alert] = "You have to be signed in or have an account to perform this action."
+    flash[:alert] = "You have to be signed in, have an account, or do not have permisson to perform this action."
     redirect_to(request.referrer || root_path)
   end
 end

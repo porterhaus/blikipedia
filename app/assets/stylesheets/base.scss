@@ -64,7 +64,7 @@ body {
 
 .hero {
   text-align: center;
-  padding: 1rem 1rem; 
+  padding: 1rem 1rem;
   margin-bottom: 4rem;
   h1 {
     font-family: $regular;
@@ -257,12 +257,36 @@ body {
   &.right {
     float: right;
   }
+  &.inline {
+    display: inline !important;
+  }
+  &.search {
+    vertical-align: top;
+    margin-left: .5rem;
+  }
 }
+.badge {
+  font-size: 0.72rem;
+  padding: 0.24rem 0.74rem;
+  background-color: #c2c2c2;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  text-transform: uppercase;
 
-input[type='text'], 
-input[type='email'], 
+  &.orange {
+    background: #E75230;
+  }
+
+  &.green {
+    background: #328B2D;
+  }
+}
+input[type='text'],
+input[type='email'],
 input[type='password'],
-textarea { 
+textarea {
   padding: 4px 10px;
   box-sizing: border-box;
   width: 100%;
@@ -271,7 +295,7 @@ textarea {
   font-size: 2rem;
   letter-spacing: -1px;
   line-height: 1.6;
-  
+
   border-top: 3px solid #7c7c7c;
   border-right: 1px solid #c3c3c3;
   border-bottom: 1px solid #ddd;
@@ -392,7 +416,7 @@ textarea {
     border-top: 5px solid #86301B;
     border-bottom: 5px solid #86301B;
     border-left: 10px solid #86301B;
-    background-color: #F1BCAF;    
+    background-color: #F1BCAF;
   }
 
   &.alert-notice {
@@ -427,7 +451,7 @@ textarea {
     .footer {
       padding: 1rem 1rem 2rem;
       border-top: 3px solid #DFDFDF;
-      
+
       .author, .stats {
         display: inline-block;
       }
@@ -502,16 +526,31 @@ textarea {
     font-size: 1.44rem;
     font-weight: bold;
     padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
   }
 
   .user-details {
     padding: 0.5rem 0;
-  }
+    a {
+      text-decoration: none;
+      padding: .5rem;
+      background-color: $sign-up-blue;
+      color: #FFF;
+      &.green {
+        background-color: #328B2D;
+      }
+    }
 
+  }
   .highlight {
     color: #394F1E;
-    font-weight: bolder;
-    font-size: 1.4rem;
+    font-family: $heavy;
+    font-size: 2rem;
+    vertical-align: middle;
+  }
+
+  div {
+    display: inline;
   }
 }
 
@@ -623,10 +662,57 @@ font-size: 1.6rem;
 
 .wiki_users {
   label {
-    display: inline-table;
+    display: none;
   }
   select {
     font-family: $regular;
     font-size: 1.4rem;
   }
 }
+.search-box {
+  padding: 0rem 0 2rem;
+  input[type="text"] {
+    padding-left: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    border-radius: 2rem;
+    outline: none;
+  }
+}
+.results {
+  font-family: $regular;
+  font-size: 1.4rem;
+  a {
+    color: #333;
+    text-decoration: none;
+    vertical-align: middle;
+  }
+  ul {
+    padding-left: 2rem;
+  }
+  li {
+    padding: 1.4rem 0;
+  }
+  .badge {
+    color: #333;
+  }
+}
+
+.user-profile {
+  padding: 0 2rem;
+  h1 {
+    font-family: $heavy;
+    font-size: 3rem;
+    line-height: 1.4;
+  }
+  div {
+    padding: 1rem 2rem 1rem;
+  }
+  a.title {
+    font-family: $demi-bold;
+    font-size: 2rem;
+    text-decoration: none;
+    color: $sign-up-blue;
+  }
+}
+

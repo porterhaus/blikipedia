@@ -1,18 +1,17 @@
 <div class="container row">
+
   <div class="wiki">
     <header class="heading">
-      <%= link_to "Back", wikis_path %>
+
+      <% if session[:search_results] %>
+        <%= link_to 'Back to search results', session[:search_results] %>
+      <% else %>
+        <%= link_to "Back", wikis_path %>
+      <% end %>
+
       <div class="status">
-        <% if @wiki.user_id == current_user.id %>
-          <span>This bliki is yours.</span>
-        <% else %>
-          <span>This bliki was created by <%= @creator.name %>. </span>
-        <% end %>
-        <% if @wiki.private == true %>
-          <span>This bliki is private.</span>
-        <% else %>
-          <span>This bliki is public.</span>
-        <% end %>
+        <%= author(@wiki, @creator) %>
+        <%= status(@wiki) %>
       </div>
     </header>
 
@@ -28,18 +27,20 @@
       <h1>Collaborators</h1>
       <% @wiki.users.each do |user| %>
         <% if user.id == current_user.id %>
-          <div class="user-details highlight"><%= user.name %> <span><=== You are a contributor.</span></div>
+          <div class="user-details green"><%= link_to user.name, user_path(user.id), class: "green" %></div>
         <% else %>
-          <div class="user-details"><%= user.name %></div>
+          <div class="user-details"><%= link_to user.name, user_path(user.id) %></div>
         <% end %>
       <% end %>
     </div>
   <% end %>
 
-  <% if current_user.collaborator?(current_user.id, @wiki.id) || current_user.id == @wiki.user_id %>
-    <div class="actions">
-      <%= link_to "Edit this Bliki", edit_wiki_path(@wiki), class: 'btn blue' %>
-    </div>
+  <% if current_user.present? %>
+    <% if current_user.collaborator?(current_user.id, @wiki.id) || current_user.id == @wiki.user_id %>
+      <div class="actions">
+        <%= link_to "Edit this Bliki", edit_wiki_path(@wiki), class: 'btn blue' %>
+      </div>
+    <% end %>
   <% end %>
 
 </div>

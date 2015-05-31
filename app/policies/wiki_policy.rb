@@ -4,7 +4,7 @@ class WikiPolicy < ApplicationPolicy
   end
 
   def show?
-     record.private? || user.present?
+    user.present? || record.private==false
   end
 
   def update?

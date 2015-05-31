@@ -7,4 +7,6 @@ class Wiki < ActiveRecord::Base
   validates :body, presence: true
 
   scope :visible_to, -> (user) { user ? all : where(private: false) }
+
+  scope :recent, -> { order(created_at: :desc) }
 end

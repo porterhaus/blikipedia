@@ -1,7 +1,12 @@
 class WikisController < ApplicationController
 
   def index
-    @wikis = policy_scope(Wiki)
+    session.delete(:search_results)
+    if params[:search] == nil
+      @wikis = policy_scope(Wiki).recent
+    else
+      @wikis = Wiki.search(params[:search])
+    end
     authorize @wikis
   end
 
@@ -16,7 +21,7 @@ class WikisController < ApplicationController
     authorize @wiki
   end
 
-  def create 
+  def create
     @wiki = Wiki.new(params.require(:wiki).permit(:title, :body, :private, :user_id))
     authorize @wiki
     @wiki.user_id = current_user.id
@@ -35,8 +40,9 @@ class WikisController < ApplicationController
   end
 
   def update
-    @wiki = Wiki.find(params[:id]) 
-    @wiki.update_attributes(params.require(:wiki).permit(:title, :body, :private, :user_id, :user_ids, :user_ids => []))
+    @wiki = Wiki.find(params[:id])
+    @wiki.updated_by = current_user.id
+    @wiki.update_attributes(params.require(:wiki).permit(:title, :body, :private, :updated_by, :user_id, :user_ids, :user_ids => []))
     if @wiki.save
       flash[:notice] = "Wiki was updated!"
       redirect_to @wiki

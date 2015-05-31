@@ -1,4 +1,6 @@
 <div class="bliki">
   <h1>Need to change it up?</h1>
-    <%= render partial: 'form', locals: { topic: @wiki } %>
+  <button class="help-toggle">Need some markdown help? Click here.</button>
+  <%= render partial: 'help' %>
+  <%= render partial: 'form', locals: { topic: @wiki } %>
 </div>

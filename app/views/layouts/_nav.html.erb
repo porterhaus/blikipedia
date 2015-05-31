@@ -8,10 +8,13 @@
       <li><%= link_to "Blikis", wikis_path %></li>
     <% if current_user.present? %>
       <li>
-        <%= link_to do %>
-          Hey, <%= current_user.name %>
-        <% end %>
+        <%= link_to current_user.name, user_path(current_user.id) %>
       </li>
+      <% if current_user.role == "admin" %>
+      <li>
+          Admin
+      </li>
+      <% end %>
       <% if current_user.role == "standard" %>
       <li>
           <%= link_to "Upgrade", new_charge_path %>

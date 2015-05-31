@@ -6,6 +6,11 @@
     <% end %>
   </div>
 </h2>
+<div class='search-box container'>
+  <%= form_tag search_path, method: :get do %>
+    <%= text_field_tag 'keyword', nil, placeholder: 'Search by title or author name' %>
+  <% end %>
+</div>
 <div class="container">
   <% @wikis.each do | wiki | %>
     <%= link_to wiki_path(wiki)  do %>
@@ -13,14 +18,21 @@
         <h2 class="title"><%= wiki.title %></h2>
         <div class="footer">
           <div class="author">
-            <div class="owner">by <a href="users/not_a_real_path" class="name"><%= wiki.user.name %></a></div>
+            <div class="owner">by <%= link_to wiki.user.name, user_path(wiki.user.id), class: "name" %> on <%= wiki.created_at.strftime("%-m/%-d/%Y") %></div>
+          </div>
+          <div class="author">
+            <div class="owner"> &nbsp;&nbsp;&nbsp;Last updated by <%= link_to get_user_name(wiki.updated_by), user_path(get_collaborator_id(wiki.updated_by), class: "name") %></a></div>
           </div>
           <div class="stats">
             <span class="reads">
               <%= rand(10) %>K reads
             </span>
-            <span class="collabo">
-
+            <span class="status">
+              <% if wiki.private == true %>
+                <em class="badge orange">private</em>
+              <% else %>
+                <em class="badge green">public</em>
+              <% end %>
             </span>
           </div>
         </div>

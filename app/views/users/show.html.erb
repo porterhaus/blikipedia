@@ -1,0 +1,24 @@
+<h2 class="page-header">
+  <div class="container"><%= @user.name %>
+    <% if current_user %>
+      <%= link_to "New", new_wiki_path, class: 'btn normal green right', id: 'new_bliki' %>
+    <% end %>
+  </div>
+</h2>
+
+
+<div class="container user-profile">
+<h1>Author of</h1>
+<% @wikis.each do |w| %>
+  <div><%= link_to w.title, wiki_path(w.id), class: 'title' %> </div>
+<% end %>
+
+<h1>Collaborator on</h1>
+<% @user.wikis.each do |w| %>
+  <div class="title"><%= link_to w.title, wiki_path(w.id), class: 'title' %> </div>
+<% end %>
+</div>
+
+
+
+

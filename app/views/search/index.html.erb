@@ -1,0 +1,26 @@
+<h2 class="page-header">
+  <div class="container">Search Results
+    <% if current_user %>
+      <%= link_to "New", new_wiki_path, class: 'btn normal green right', id: 'new_bliki' %>
+    <% end %>
+  </div>
+</h2>
+<div class="results container">
+  <ul>
+    <% if @results.blank? %>
+      <li><i>No Results</i></li>
+    <% else %>
+      <% @results.each do |result| %>
+
+        <li>
+          <% if result.try(:title) %>
+            <%= link_to result.title, wiki_path(result.id) %> <em class="badge">bliki</em>
+          <% elsif result.try(:name) %>
+            <%= link_to result.name, user_path(result.id) %>&nbsp;<em class="badge">user</em>
+          <% end %>
+        </li>
+
+      <% end %>
+    <% end %>
+  </ul>
+</div>
