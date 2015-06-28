@@ -1,10 +1,14 @@
 module WikisHelper
 
   def author(wiki, creator)
-    if wiki.user_id == current_user.id
-      @author = 'This bliki is yours.'
+    if current_user.nil?
+      @author = creator.name
     else
-      @author = 'This bliki was created by ' + creator.name + '.'
+      if wiki.user_id == current_user.id
+        @author = 'This bliki is yours.'
+      else
+        @author = 'This bliki was created by ' + creator.name + '.'
+      end
     end
     return @author
   end
