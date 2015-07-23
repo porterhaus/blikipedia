@@ -4,7 +4,7 @@ class SearchController < ApplicationController
       redirect_to jump
     else
       session[:search_results] = request.url
-      @results = Search.for(params[:keyword], current_user.id)
+      @results = Search.for(params[:keyword])
     end
   end
 

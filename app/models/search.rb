@@ -1,6 +1,6 @@
 class Search
-  def self.for(keyword, user)
-    Wiki.eager_load(:collaborators).where("title LIKE ? AND private = ? OR wikis.user_id = ? OR collaborators.user_id = ?", "%#{keyword}%", false, user, user) +
+  def self.for(keyword)
+    Wiki.eager_load(:collaborators).where("title LIKE ? AND private = ?", "%#{keyword}%", false) +
       User.where("name LIKE ?", "%#{keyword}%")
   end
 end
