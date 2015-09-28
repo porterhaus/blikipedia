@@ -1,4 +1,4 @@
-![My image](porterhaus.github.com/repository/img/work/blikipedia.png)
+![My image](porterhaus.github.io/repository/img/work/blikipedia.png)
 
 == Blikipedia
 
