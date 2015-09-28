@@ -1,5 +1,3 @@
-<img src="https://porterhaus.github.io/assets/img/work/blikipedia.png" />
-
 == Blikipedia
 
 ROR SaaS app that allows users to create their own wikis. Built during mentorship at Bloc.io. Responsible for end-to-end implementation including UX design.
