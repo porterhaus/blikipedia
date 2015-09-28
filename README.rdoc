@@ -8,3 +8,4 @@ Demo URL: http://blikipedia.herokuapp.com
 
 - Mark-down based wiki creation and collaboration using Redcarpet gem.
 - User management and authorization using pundit and devise gems. 
+- User interface and graphic design Sketch 3. 
