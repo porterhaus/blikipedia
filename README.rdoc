@@ -1,28 +1,10 @@
-== README
+== Blikipedia
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ROR SaaS app that allows users to create their own wikis. Built during mentorship at Bloc.io. Responsible for end-to-end implementation including UX design.
 
-Things you may want to cover:
+Demo URL: http://blikipedia.herokuapp.com
 
-* Ruby version
+=== Key features:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+- Mark-down based wiki creation and collaboration using Redcarpet gem.
+- User management and authorization using pundit and devise gems. 
