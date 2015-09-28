@@ -4,7 +4,7 @@ ROR SaaS app that allows users to create their own wikis. Built during mentorshi
 
 Demo URL: http://blikipedia.herokuapp.com
 
-=== Key features:
+=== Key features and Notes:
 
 - Mark-down based wiki creation and collaboration using Redcarpet gem.
 - User management and authorization using pundit and devise gems. 
